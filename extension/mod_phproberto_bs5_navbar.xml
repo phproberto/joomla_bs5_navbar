@@ -143,6 +143,7 @@
 
 			</fieldset>
 			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" rows="3" validate="CssIdentifier" />
 				<field name="load_bootstrap_css" type="LIST" default="none" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_CSS" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_CSS_DESC">
 					<option value="cdn">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_OPTION_CDN</option>
 					<option value="local">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_OPTION_LOCAL</option>
