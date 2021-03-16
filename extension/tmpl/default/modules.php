@@ -22,6 +22,6 @@ if (!$modules) {
 ?>
 <?php foreach ($modules as $module) : ?>
     <div class="<?= $position ?>">
-        <?= ModuleHelper::renderModule($module, ['style' => 'raw']); ?>
+        <?= ModuleHelper::renderModule($module, ['style' => 'html5']); ?>
     </div>
 <?php endforeach;
