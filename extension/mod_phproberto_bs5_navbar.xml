@@ -92,7 +92,7 @@
 					<option value="0">JDISABLED</option>
 				</field>
 				<field name="brand_image" type="media" showon="show_brand:1[AND]show_brand_image:1" directory="mod_phproberto_bs5_navbar" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_DESC" />
-				<field name="brand_image_width" type="text" showon="show_brand:1[AND]show_brand_image:1" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_WIDTH" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_WIDTH_DESC" />
+				<field name="brand_image_width" type="text" showon="show_brand:1[AND]show_brand_image:1" default="30" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_WIDTH" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_WIDTH_DESC" />
 				<field name="brand_image_height" type="text" showon="show_brand:1[AND]show_brand_image:1" default="24" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_HEIGHT" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_HEIGHT_DESC" />
 				<field name="brand_image_alt" type="text" showon="show_brand:1[AND]show_brand_image:1" default="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_ALT_DEFAULT" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_ALT" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_ALT_DESC" />
 				<field name="show_brand_text" type="radio" showon="show_brand:1" class="btn-group btn-group-yesno" default="1" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_BRAND_TEXT" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_BRAND_TEXT_DESC">
