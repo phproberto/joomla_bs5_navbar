@@ -18,11 +18,11 @@ $imageUrl = $params->get('brand_image') ?: rtrim(Uri::root(), '/') . '/media/mod
 $imageHeight = $params->get('brand_image_height', '24');
 $imageWidth = $params->get('brand_image_width');
 ?>
-<a class="navbar-brand" href="<?= Uri::root() ?>">
+<a class="navbar-brand d-flex me-4" href="<?= Uri::root() ?>">
     <?php if ($params->get('show_brand_image', '1') === '1') : ?>
-        <img src="<?= $imageUrl ?>" alt="" <?php if ($imageWidth) : ?>width="<?= $imageWidth ?>" <?php endif; ?> <?php if ($imageHeight) : ?>height="<?= $imageHeight ?>" <?php endif; ?> />
+        <img class="me-2" src="<?= $imageUrl ?>" alt="" <?php if ($imageWidth) : ?>width="<?= $imageWidth ?>" <?php endif; ?> <?php if ($imageHeight) : ?>height="<?= $imageHeight ?>" <?php endif; ?> />
     <?php endif; ?>
     <?php if ($params->get('show_brand_text', '1') === '1') : ?>
-        <?= $params->get('brand_text', 'Navbar') ?>
+        <span><?= $params->get('brand_text', 'Navbar') ?></span>
     <?php endif; ?>
 </a>

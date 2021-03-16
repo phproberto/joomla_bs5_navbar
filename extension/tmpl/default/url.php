@@ -22,7 +22,7 @@ if ($item->anchor_title) {
 
 $attributes['class'] = $item->anchor_css ? $item->anchor_css : '';
 
-if ($item->level === '1') {
+if ((int) $item->level === 1) {
     $attributes['class'] .= ' nav-link';
 } else {
     $attributes['class'] .= ' dropdown-item';
