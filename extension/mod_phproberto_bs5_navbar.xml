@@ -62,11 +62,11 @@
 				</field>
 				<field type="spacer" name="section_layout" label="MOD_PHPROBERTO_BS5_NAVBAR_SECTION_LAYOUT" />
 				<field name="layout" type="modulelayout" default=":_default" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_TEMPLATE" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_TEMPLATE_DESC" />
-				<field name="color_scheme" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_COLOR_SCHEME" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_COLOR_SCHEME_DESC" default="navbar-light">
+				<field name="color_scheme" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_COLOR_SCHEME" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_COLOR_SCHEME_DESC" default="navbar-dark">
 					<option value="navbar-light">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_COLOR_SCHEME_OPTION_LIGHT</option>
 					<option value="navbar-dark">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_COLOR_SCHEME_OPTION_DARK</option>
 				</field>
-				<field name="bg_color" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_DESC" default="bg-secondary">
+				<field name="bg_color" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_DESC" default="custom">
 					<option value="custom">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_CUSTOM</option>
 					<option value="bg-primary">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_PRIMARY</option>
 					<option value="bg-secondary">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_SECONDARY</option>
@@ -80,7 +80,7 @@
 					<option value="bg-white">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_WHITE</option>
 					<option value="bg-transparent">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_TRANSPARENT</option>
 				</field>
-				<field name="bg_color_custom" showon="bg_color:custom" type="color" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM_DESC" default="#10223E" validate="color" />
+				<field name="bg_color_custom" showon="bg_color:custom" type="color" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM_DESC" default="#4c026e" validate="color" />
 
 				<field type="spacer" name="section_brand" label="MOD_PHPROBERTO_BS5_NAVBAR_SECTION_BRAND" />
 				<field name="show_brand" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_BRAND" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_BRAND_DESC">
@@ -110,7 +110,7 @@
 					<option value="1">JENABLED</option>
 					<option value="0">JDISABLED</option>
 				</field>
-				<field name="searchbox_button_bg_color" showon="show_search:1[AND]show_search_button:1" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SEARCHBOX_BUTTON_BG_COLOR" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SEARCHBOX_BUTTON_BG_COLOR_DESC" default="bg-secondary">
+				<field name="searchbox_button_bg_color" showon="show_search:1[AND]show_search_button:1" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SEARCHBOX_BUTTON_BG_COLOR" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SEARCHBOX_BUTTON_BG_COLOR_DESC" default="custom">
 					<option value="custom">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_CUSTOM</option>
 					<option value="bg-primary">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_PRIMARY</option>
 					<option value="bg-secondary">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_SECONDARY</option>
@@ -124,7 +124,7 @@
 					<option value="bg-white">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_WHITE</option>
 					<option value="bg-transparent">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_TRANSPARENT</option>
 				</field>
-				<field name="searchbox_button_bg_color_custom" showon="show_search:1[AND]show_search_button:1[AND]searchbox_button_bg_color:custom" type="color" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM_DESC" default="#10223E" validate="color" />
+				<field name="searchbox_button_bg_color_custom" showon="show_search:1[AND]show_search_button:1[AND]searchbox_button_bg_color:custom" type="color" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM_DESC" default="#9511ed" validate="color" />
 				<field name="searchbox_button_text_color" showon="show_search:1[AND]show_search_button:1" type="list" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SEARCHBOX_BUTTON_TEXT_COLOR" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SEARCHBOX_BUTTON_TEXT_COLOR_DESC" default="text-light">
 					<option value="custom">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_CUSTOM</option>
 					<option value="text-primary">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_PRIMARY</option>

@@ -21,7 +21,7 @@ if (!$modules) {
 }
 ?>
 <?php foreach ($modules as $module) : ?>
-    <div class="<?= $position ?> navbar-text">
+    <div class="<?= $position ?>">
         <?= ModuleHelper::renderModule($module, ['style' => 'raw']); ?>
     </div>
 <?php endforeach;
