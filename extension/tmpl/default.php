@@ -42,8 +42,15 @@ $moduleClass = htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_COMPAT,
 
 $customBackgroundColor = $params->get('bg_color_custom', '#4c026e');
 $useCustomBackgroundColor = $params->get('bg_color', 'bg-secondary') === 'custom';
+
+$dynamicClasses = [
+    $params->get('color_scheme', 'navbar-dark'),
+    'layout-' . $this->getLayoutId(),
+    $params->get('bg_color', 'bg-secondary'),
+    $moduleClass
+];
 ?>
-<nav class="navbar navbar-expand-lg <?= $params->get('color_scheme', 'navbar-dark') ?> <?= $params->get('bg_color', 'bg-secondary') ?> <?php echo $moduleClass; ?> " <?php if ($useCustomBackgroundColor) : ?> style="background-color: <?= $customBackgroundColor ?>" <?php endif; ?>>
+<nav class="navbar navbar-expand-lg mod-phproberto-bs5-navbar <?= trim(implode(' ', $dynamicClasses)) ?>" <?php if ($useCustomBackgroundColor) : ?> style="background-color: <?= $customBackgroundColor ?>" <?php endif; ?>>
     <div class="container">
         <?= $moduleInstance->render('default.modules', array_merge($displayData, ['position' => $params->get('modules_beginning_position', 'navbar-begin')])) ?>
         <?php if ($params->get('show_brand', '1') === '1') : ?>
