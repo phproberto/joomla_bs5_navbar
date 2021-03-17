@@ -45,10 +45,11 @@ $useCustomBackgroundColor = $params->get('bg_color', 'bg-secondary') === 'custom
 ?>
 <nav class="navbar navbar-expand-lg <?= $params->get('color_scheme', 'navbar-dark') ?> <?= $params->get('bg_color', 'bg-secondary') ?> <?php echo $moduleClass; ?> " <?php if ($useCustomBackgroundColor) : ?> style="background-color: <?= $customBackgroundColor ?>" <?php endif; ?>>
     <div class="container">
-        <?= $moduleInstance->render('default.modules', array_merge($displayData, ['position' => $module->position . '-navbar-start'])) ?>
+        <?= $moduleInstance->render('default.modules', array_merge($displayData, ['position' => $params->get('modules_beginning_position', 'navbar-begin')])) ?>
         <?php if ($params->get('show_brand', '1') === '1') : ?>
             <?= $this->sublayout('brand', $displayData) ?>
         <?php endif; ?>
+        <?= $moduleInstance->render('default.modules', array_merge($displayData, ['position' => $params->get('modules_after_brand_position', 'navbar-after-brand')])) ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,7 +58,7 @@ $useCustomBackgroundColor = $params->get('bg_color', 'bg-secondary') === 'custom
             <?php if ($params->get('show_search', '1') === '1') : ?>
                 <?= $moduleInstance->render('default.searchbox', $displayData) ?>
             <?php endif; ?>
-            <?= $moduleInstance->render('default.modules', array_merge($displayData, ['position' => $module->position . '-navbar-end'])) ?>
+            <?= $moduleInstance->render('default.modules', array_merge($displayData, ['position' => $params->get('modules_end_position', 'navbar-end')])) ?>
         </div>
     </div>
 </nav>
