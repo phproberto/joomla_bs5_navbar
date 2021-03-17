@@ -23,7 +23,7 @@ if (!$modules) {
 <?php foreach ($modules as $module) : ?>
     <?php
     // Always avoid rendering module title
-    $module->title = ''
+    $module->showtitle = false;
     ?>
     <div class="<?= $position ?>">
         <?= ModuleHelper::renderModule($module, ['style' => 'html5']); ?>
