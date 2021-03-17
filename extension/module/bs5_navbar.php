@@ -126,7 +126,7 @@ final class PhprobertoModuleBs5_Navbar
         );
     }
 
-    protected function getDefaultData()
+    public function getDefaultLayoutData()
     {
         $active = $this->getActiveMenuItem();
         $base = $this->getBaseMenuItem();
@@ -351,7 +351,19 @@ final class PhprobertoModuleBs5_Navbar
      */
     public function render($layout = null, $data = array())
     {
-        return $this->getRenderer($layout)->render(array_merge($this->getDefaultData(), $data));
+        return $this->getRenderer($layout)->render(array_merge($this->getDefaultLayoutData(), $data));
+    }
+
+    /**
+     * Render the module
+     *
+     * @param   array  $data  Data for the layout
+     *
+     * @return  string
+     */
+    public function renderDebug($layout = null, $data = array())
+    {
+        return $this->getRenderer($layout)->debug(array_merge($this->getDefaultLayoutData(), $data));
     }
 
     /**
