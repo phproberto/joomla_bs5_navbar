@@ -10,8 +10,6 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
-
 extract($displayData);
 
 $attributes = [];

@@ -19,7 +19,7 @@ if (($tagId = $params->get('tag_id', ''))) {
 }
 ?>
 
-<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu<?php echo $class_sfx; ?>" <?php echo $id; ?>>
+<ul class="navbar-nav me-auto menu <?php echo $class_sfx; ?>" <?php echo $id; ?>>
     <?php foreach ($list as $i => &$item) {
         $class = 'item-' . $item->id . ' type-' . $item->type;
 
