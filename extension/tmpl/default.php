@@ -11,22 +11,25 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Uri\Uri;
 
 extract($displayData);
 
-$doc = Factory::getDocument();
+$wa = Factory::getDocument()->getWebAssetManager();
 
 if ($params->get('load_bootstrap_css', 'cdn') === 'cdn') {
-    $doc->addStyleSheet('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css');
+    $wa->registerAsset('style', 'twitter_bootstrap5', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css')
+        ->useAsset('style', 'twitter_bootstrap5');
 } elseif ($params->get('load_bootstrap_css', 'cdn') === 'local') {
-    $doc->addStyleSheet(rtrim(Uri::root(), '/') . '/media/mod_phproberto_bs5_navbar/css/bootstrap.min.css');
+    $wa->registerAsset('style', 'twitter_bootstrap5', 'mod_phproberto_bs5_navbar/bootstrap.min.css')
+        ->useAsset('style', 'twitter_bootstrap5');
 }
 
 if ($params->get('load_bootstrap_js', 'cdn') === 'cdn') {
-    $doc->addScript('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js');
+    $wa->registerAsset('script', 'twitter_bootstrap5', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', [], ['defer' => true])
+        ->useAsset('script', 'twitter_bootstrap5');
 } elseif ($params->get('load_bootstrap_js', 'cdn') === 'local') {
-    $doc->addScript(rtrim(Uri::root(), '/') . '/media/mod_phproberto_bs5_navbar/js/bootstrap.bundle.min.js');
+    $wa->registerAsset('script', 'mod_phproberto_bs5_navbar', 'mod_phproberto_bs5_navbar/bootstrap.bundle.min.js', [], ['defer' => true])
+        ->useAsset('script', 'mod_phproberto_bs5_navbar');
 }
 
 $id = '';
