@@ -23,8 +23,7 @@ if ($params->get('load_bootstrap_css', 'none') === 'cdn') {
     $wa->registerAsset('style', 'twitter_bootstrap5', 'mod_phproberto_bs5_navbar/bootstrap.min.css')
         ->useAsset('style', 'twitter_bootstrap5');
 }
-
-if ($params->get('show_dropdowns_on_over', '1') === '1') {
+if ((int) $params->get('show_dropdowns_on_over', '1') === 1) {
     $css = <<<CSS
     #$id .navbar-collapse:not(.show) .dropdown:hover > .dropdown-menu {
         display: block;
