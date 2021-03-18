@@ -10,4 +10,4 @@
 
 defined('_JEXEC') or die;
 
-echo $moduleInstance->render('default.separator', $displayData);
+echo $moduleInstance->render('default.separator');

@@ -43,6 +43,13 @@ final class PhprobertoModuleBs5_Navbar
     protected $params;
 
     /**
+     * DB row data that represents a specific instance.
+     *
+     * @var \stdClass
+     */
+    protected $module;
+
+    /**
      * @var  RendererInterface
      */
     protected $renderer;
@@ -50,11 +57,13 @@ final class PhprobertoModuleBs5_Navbar
     /**
      * Constructor
      *
-     * @param   mixed  $params  array or JRegistry witht the module parameters
+     * @param   mixed  $params  array or Registry with the module parameters
+     * @param   mixed  $module  Data if the module represents a specific DB item
      */
-    public function __construct($params = array())
+    public function __construct($params = array(), $module = null)
     {
         $this->setParams($params);
+        $this->module = $module;
     }
 
     /**
@@ -112,6 +121,30 @@ final class PhprobertoModuleBs5_Navbar
     }
 
     /**
+     * Get the ID of the module.
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        $params = $this->getParams();
+
+        $idParam = $params->get('tag_id');
+
+        if ($idParam) {
+            return $idParam;
+        }
+
+        $prefix = $this->getFolderName() . '-';
+
+        if ($this->module && property_exists($this->module, 'id')) {
+            return $prefix . $this->module->id;
+        }
+
+        return uniqid($prefix);
+    }
+
+    /**
      * Get the layout paths for this view
      *
      * @return  array
@@ -138,7 +171,11 @@ final class PhprobertoModuleBs5_Navbar
             'base' => $base,
             'class_sfx' => htmlspecialchars($params->get('class_sfx'), ENT_COMPAT, 'UTF-8'),
             'default_id' => $default->id,
+            'id' => $this->getId(),
             'list' => $this->getMenuItems(),
+            'module' => $this->module,
+            'moduleClass' => htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_COMPAT, 'UTF-8'),
+            'moduleInstance' => $this,
             'params' => $params,
             'path' => $base->tree,
             'showAll' => $params->get('showAllChildren', 1),

@@ -64,25 +64,31 @@ if (($tagId = $params->get('tag_id', ''))) {
         }
 
         echo '<li class="' . $class . '">';
+
+        // Parent items need to be shown as separators to display dropdowns
+        if ($item->deeper) {
+            $item->type = 'separator';
+        }
+
         switch ($item->type):
             case 'component':
                 echo $moduleInstance->render(
                     'default.component',
-                    array_merge($displayData, ['item' => $item])
+                    ['item' => $item]
                 );
                 break;
             case 'url':
             default:
                 echo $moduleInstance->render(
                     'default.url',
-                    array_merge($displayData, ['item' => $item])
+                    ['item' => $item]
                 );
                 break;
             case 'separator':
             case 'heading':
                 echo $moduleInstance->render(
                     'default.separator',
-                    array_merge($displayData, ['item' => $item])
+                    ['item' => $item]
                 );
                 break;
         endswitch;

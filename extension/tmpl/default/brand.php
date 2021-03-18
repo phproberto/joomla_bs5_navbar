@@ -21,7 +21,7 @@ $imageWidth = $params->get('brand_image_width');
 
 $altText = Text::_($params->get('brand_image_alt', 'MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BRAND_IMAGE_ALT_DEFAULT'));
 ?>
-<a class="navbar-brand d-flex me-4" href="<?= Uri::root() ?>">
+<a class="navbar-brand d-flex align-items-center me-4" href="<?= Uri::root() ?>">
     <?php if ($params->get('show_brand_image', '1') === '1') : ?>
         <img class="me-2" src="<?= $imageUrl ?>" alt="<?= $altText ?>" <?php if ($imageWidth) : ?>width="<?= $imageWidth ?>" <?php endif; ?> <?php if ($imageHeight) : ?>height="<?= $imageHeight ?>" <?php endif; ?> />
     <?php endif; ?>

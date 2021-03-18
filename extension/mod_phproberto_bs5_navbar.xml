@@ -55,7 +55,6 @@
 					<option value="9">J9</option>
 					<option value="10">J10</option>
 				</field>
-
 				<field name="showAllChildren" type="radio" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_ALLCHILDREN_LABEL" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_ALLCHILDREN_DESC" class="btn-group btn-group-yesno" default="1" filter="integer">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -81,6 +80,10 @@
 					<option value="bg-transparent">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_OPTION_TRANSPARENT</option>
 				</field>
 				<field name="bg_color_custom" showon="bg_color:custom" type="color" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_BG_COLOR_CUSTOM_DESC" default="#4c026e" validate="color" />
+				<field name="show_dropdowns_on_over" type="radio" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_DROPDOWNS_ON_OVER" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_DROPDOWNS_ON_OVER_DESC" class="btn-group btn-group-yesno" default="1" filter="integer">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field type="spacer" name="section_brand" label="MOD_PHPROBERTO_BS5_NAVBAR_SECTION_BRAND" />
 				<field name="show_brand" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_BRAND" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_SHOW_BRAND_DESC">
 					<option value="1">JENABLED</option>
@@ -145,6 +148,7 @@
 				<field name="modules_end_position" type="text" default="navbar-end" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_MODULES_END_POSITION" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_MODULES_END_POSITION_DESC" />
 			</fieldset>
 			<fieldset name="advanced">
+				<field name="tag_id" type="text" validate="CssIdentifier" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_TAG_ID" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_TAG_ID_DESC" />
 				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" rows="3" validate="CssIdentifier" />
 				<field name="load_bootstrap_css" type="LIST" default="none" label="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_CSS" description="MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_CSS_DESC">
 					<option value="cdn">MOD_PHPROBERTO_BS5_NAVBAR_PARAM_LOAD_BOOTSTRAP_OPTION_CDN</option>

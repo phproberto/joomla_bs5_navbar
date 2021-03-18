@@ -13,13 +13,8 @@ defined('_JEXEC') or die;
 // Register prefix for autoloading
 JLoader::registerPrefix('Phproberto', __DIR__);
 
-$moduleInstance = new PhprobertoModuleBs5_Navbar($params);
+$moduleInstance = new PhprobertoModuleBs5_Navbar($params, $module);
 
-echo $moduleInstance->render(
-	str_replace('_:', '', $params->get('layout', '_:default', 'string')),
-	array(
-		'module'         => $module,
-		'params'         => $params,
-		'moduleInstance' => $moduleInstance
-	)
-);
+$layout = str_replace('_:', '', $params->get('layout', '_:default', 'string'));
+
+echo $moduleInstance->render($layout);
