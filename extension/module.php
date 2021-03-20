@@ -19,7 +19,7 @@ use Joomla\Registry\Registry;
  *
  * @since  __DEPLOY_VERSION__
  */
-final class PhprobertoModuleBs5_Navbar
+final class PhprobertoBs5NavbarModule
 {
     /**
      * Base overridable renderer
@@ -34,7 +34,7 @@ final class PhprobertoModuleBs5_Navbar
      * @var    string
      * @since  1.0
      */
-    protected $folderName;
+    protected $folderName = 'mod_phproberto_bs5_navbar';
 
     /**
      * @var    JRegistry
@@ -358,14 +358,6 @@ final class PhprobertoModuleBs5_Navbar
      */
     protected function getFolderName()
     {
-        if (null === $this->folderName) {
-            $class = get_class($this);
-
-            $prefix = strstr($class, 'Module', true);
-
-            $this->folderName = 'mod_' . strtolower($prefix) . '_' . $this->getInstanceName();
-        }
-
         return $this->folderName;
     }
 

@@ -11,10 +11,10 @@
 	<description>MOD_PHPROBERTO_BS5_NAVBAR_DESCRIPTION</description>
 	<files>
 		<folder>language</folder>
-		<folder>module</folder>
 		<folder>tmpl</folder>
 		<filename module="mod_phproberto_bs5_navbar">mod_phproberto_bs5_navbar.php</filename>
 		<filename>mod_phproberto_bs5_navbar.xml</filename>
+		<filename>module.php</filename>
 	</files>
 	<media folder="media">
 		<folder>mod_phproberto_bs5_navbar</folder>
