@@ -1,0 +1,6 @@
+{
+	"wwwDir"           : "/home/roberto/www/joomla4",
+	"browserConfig" : {
+		"proxy" : "localhost/joomla4"
+	}
+}

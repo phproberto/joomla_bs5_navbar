@@ -1,0 +1,35 @@
+{
+  "name": "phproberto_bs5_navbar",
+  "version": "1.0.0-beta2",
+  "description": "A bootstrap 5 navbar for Joomla!",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phproberto/joomla_bs5_navbar.git"
+  },
+  "keywords": [
+    "joomla",
+    "bootstrap5",
+    "navbar",
+    "phproberto"
+  ],
+  "author": "Roberto Segura <roberto@phproberto.com>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/phproberto/joomla_bs5_navbar/issues"
+  },
+  "homepage": "https://github.com/phproberto/joomla_bs5_navbar#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.1.0",
+    "xml2js": "^0.4.23"
+  }
+}
