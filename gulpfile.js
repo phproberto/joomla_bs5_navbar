@@ -26,10 +26,9 @@ function reloadBrowserSync(cb) {
 
 const moduleName = "mod_phproberto_bs5_navbar";
 
-const assetsPath = './assets';
 const nodeModulesPath = './node_modules';
 const extensionPath = './extension';
-const extensionMediaPath = extensionPath + '/media';
+const extensionMediaPath = extensionPath + '/media/mod_phproberto_bs5_navbar';
 const extensionAssetsPath = extensionPath + '/assets';
 const manifesFileName = moduleName + '.xml';
 const wwwPath = config.wwwDir + '/modules/' + moduleName;
@@ -40,18 +39,16 @@ function copyBootstrapJavascript() {
     return gulp.src([
         nodeModulesPath + '/bootstrap/dist/js/bootstrap.bundle.min.*'
     ])
-	.pipe(gulp.dest(extensionAssetsPath + '/js'))
-	.pipe(gulp.dest(wwwAssetsPath + '/js'))
+	.pipe(gulp.dest(extensionMediaPath + '/js'))
 }
+
 
 function copyBootstrapCss() {
     return gulp.src([
         nodeModulesPath + '/bootstrap/dist/css/bootstrap.min.*'
     ])
-	.pipe(gulp.dest(extensionAssetsPath + '/css'))
-	.pipe(gulp.dest(wwwAssetsPath + '/css'))
+	.pipe(gulp.dest(extensionMediaPath + '/css'))
 }
-
 
 function clean() {
 	return del(wwwPath, {force : true});
