@@ -1,6 +1,6 @@
 {
   "name": "phproberto_bs5_navbar",
-  "version": "1.0.0-beta2",
+  "version": "1.0.0-beta3",
   "description": "A bootstrap 5 navbar for Joomla!",
   "main": "gulpfile.js",
   "scripts": {
