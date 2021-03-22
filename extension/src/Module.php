@@ -8,10 +8,14 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
+namespace Phproberto\Joomla\Module\Bootstrap5\Navbar;
+
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Multilanguage;
 use Joomla\CMS\Layout\FileLayout;
+use Joomla\CMS\Router\Route;
 use Joomla\Registry\Registry;
 
 /**
@@ -19,7 +23,7 @@ use Joomla\Registry\Registry;
  *
  * @since  __DEPLOY_VERSION__
  */
-final class PhprobertoBs5NavbarModule
+final class Module
 {
     /**
      * Base overridable renderer
@@ -37,7 +41,7 @@ final class PhprobertoBs5NavbarModule
     protected $folderName = 'mod_phproberto_bs5_navbar';
 
     /**
-     * @var    JRegistry
+     * @var    Registry
      * @since  1.0
      */
     protected $params;
@@ -109,11 +113,11 @@ final class PhprobertoBs5NavbarModule
      */
     public static function getDefaultMenuItem()
     {
-        $menu = JFactory::getApplication()->getMenu();
-        $lang = JFactory::getLanguage();
+        $menu = Factory::getApplication()->getMenu();
+        $lang = Factory::getLanguage();
 
         // Look for the home menu
-        if (JLanguageMultilang::isEnabled()) {
+        if (Multilanguage::isEnabled()) {
             return $menu->getDefault($lang->getTag());
         }
 
@@ -270,7 +274,7 @@ final class PhprobertoBs5NavbarModule
                             $item->flink = 'index.php?Itemid=' . $item->getParams()->get('aliasoptions');
 
                             // Get the language of the target menu item when site is multilingual
-                            if (JLanguageMultilang::isEnabled()) {
+                            if (Multilanguage::isEnabled()) {
                                 $newItem = Factory::getApplication()->getMenu()->getItem((int) $item->getParams()->get('aliasoptions'));
 
                                 // Use language code if not set to ALL
@@ -286,9 +290,9 @@ final class PhprobertoBs5NavbarModule
                     }
 
                     if ((strpos($item->flink, 'index.php?') !== false) && strcasecmp(substr($item->flink, 0, 4), 'http')) {
-                        $item->flink = JRoute::_($item->flink, true, $item->getParams()->get('secure'));
+                        $item->flink = Route::_($item->flink, true, $item->getParams()->get('secure'));
                     } else {
-                        $item->flink = JRoute::_($item->flink);
+                        $item->flink = Route::_($item->flink);
                     }
 
                     // We prevent the double encoding because for some reason the $item is shared for menu modules and we get double encoding
@@ -327,6 +331,7 @@ final class PhprobertoBs5NavbarModule
         $renderer = new FileLayout($layout);
 
         $debugMode = (bool) $params->get('debug', false);
+        $renderer->loadVersionSuffixes();
         $renderer->setDebug($debugMode);
 
         $renderer->setIncludePaths($this->getModuleLayoutPaths());
@@ -364,11 +369,21 @@ final class PhprobertoBs5NavbarModule
     /**
      * Get the module parameters
      *
-     * @return  JRegistry
+     * @return  Registry
      */
     public function getParams()
     {
         return $this->params;
+    }
+
+    /**
+     * Is this module being rendered in Joomla4?
+     *
+     * @return boolean
+     */
+    public function isJoomla4()
+    {
+        return version_compare(\JVERSION, '4.0.0-beta1', 'ge');
     }
 
     /**

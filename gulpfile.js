@@ -58,7 +58,7 @@ function clean() {
 }
 
 function cleanMedia() {
-	return del(extensionMediaPath, {force : true});
+	return del(wwwMediaPath, {force : true});
 }
 
 function copy() {

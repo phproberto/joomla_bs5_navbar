@@ -1,0 +1,20 @@
+{
+    "name": "phproberto/joomla_bs5_navbar",
+    "type": "library",
+    "description": "A bootstrap 5 navbar for Joomla!",
+    "keywords": ["joomla", "bootstrap5","navbar","phproberto"],
+    "homepage": "https://github.com/phproberto/joomla_bs5_navbar",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Roberto Segura",
+            "email": "roberto@phproberto.com",
+            "homepage": "http://phproberto.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Phproberto\\Joomla\\Module\\Bootstrap5\\Navbar\\": "src/"
+        }
+    }
+}

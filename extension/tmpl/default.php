@@ -12,6 +12,8 @@ defined('_JEXEC') or die;
 
 extract($displayData);
 
+/** @var Phproberto\Joomla\Module\Bootstrap5\Navbar\Module $moduleInstance */
+
 $moduleInstance->render('header.css');
 $moduleInstance->render('header.js');
 

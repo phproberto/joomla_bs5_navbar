@@ -14,7 +14,23 @@ use Joomla\CMS\Factory;
 
 extract($displayData);
 
-$wa = Factory::getDocument()->getWebAssetManager();
+/** @var Phproberto\Joomla\Module\Bootstrap5\Navbar\Module $moduleInstance */
+
+/** @var Joomla\CMS\Document\Document $doc */
+$doc = Factory::getDocument();
+
+$showDropdownsOnOverCss = <<<CSS
+    #$id .navbar-collapse:not(.show) .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+    #$id .navbar-collapse:not(.show) .dropdown.level-2 .dropdown-menu {
+        margin-left: 150px;
+        margin-top: -28px;
+    }
+CSS;
+
+
+$wa = $doc->getWebAssetManager();
 
 if ($params->get('load_bootstrap_css', 'none') === 'cdn') {
     $wa->registerAsset('style', 'twitter_bootstrap5', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css')
@@ -25,14 +41,5 @@ if ($params->get('load_bootstrap_css', 'none') === 'cdn') {
 }
 
 if ((int) $params->get('show_dropdowns_on_over', '1') === 1) {
-    $css = <<<CSS
-    #$id .navbar-collapse:not(.show) .dropdown:hover > .dropdown-menu {
-        display: block;
-    }
-    #$id .navbar-collapse:not(.show) .dropdown.level-2 .dropdown-menu {
-        margin-left: 150px;
-        margin-top: -28px;
-    }
-    CSS;
-    $wa->addInline('style', $css);
+    $wa->addInline('style', $showDropdownsOnOverCss);
 }
